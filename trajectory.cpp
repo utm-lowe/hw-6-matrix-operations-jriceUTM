@@ -84,6 +84,7 @@ int main() {
         // What needs to happen is this:
         // 1. Update the position of the object based on the current velocity
         //    and delta time.
+        
         // 2. Update the velocity based on the gravitational acceleration.
         // 3. If the current position exceeds the grid height, update the grid
         //    height to the y coordinate + 1.
