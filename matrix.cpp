@@ -12,6 +12,8 @@
 
 
 #include <iostream>
+#include <iomanip>
+
 #include "matrix.h"
 
 Matrix::Matrix(unsigned int rows, unsigned int cols){
@@ -204,10 +206,11 @@ Matrix operator*(const Matrix& m, double scalar){
  * @param m The matrix.
  * @return std::ostream& The output stream.
  */
-std::ostream& operator<<(std::ostream& os, const Matrix& m){
-    for (int i = 0; i < m.getRows(); ++i) {
-        for (int j = 0; j < m.getCols(); ++j) {
-            os << m.at(i, j) << " ";
+std::ostream& operator<<(std::ostream& os, const Matrix& m)
+{
+    for (unsigned int i = 0; i < m.getRows(); ++i) {
+        for (unsigned int j = 0; j < m.getCols(); ++j) {
+            os << std::setw(10) << m.at(i,j) << " ";
         }
         os << std::endl;
     }
